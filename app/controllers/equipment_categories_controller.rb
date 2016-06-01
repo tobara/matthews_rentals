@@ -13,6 +13,7 @@ class EquipmentCategoriesController < ApplicationController
     end
 
     def show
+
       @equipment_category = EquipmentCategory.find(params[:id])
       render :show
     end
