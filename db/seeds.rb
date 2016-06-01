@@ -6,7 +6,7 @@ EquipmentCategory.create([{ category: 'Compaction', cat_img:'compactor.jpg' }])
 
 EquipmentCategory.create([{ category: 'Concrete ', cat_img:'concrete_saw.jpg' }])
 
-EquipmentCategory.create([{ category: 'Drills &amp; Demolition', cat_img:'demo-drill.jpg' }])
+EquipmentCategory.create([{ category: 'Drills & Demolition', cat_img:'demo-drill.jpg' }])
 
 
 EquipmentCategory.create([{ category: 'Earth Moving', cat_img:'tractor-backhoe.jpg' }])
@@ -14,19 +14,19 @@ EquipmentCategory.create([{ category: 'Earth Moving', cat_img:'tractor-backhoe.j
 
 EquipmentCategory.create([{ category: 'Fastening Tools', cat_img:'nail-gun-2.jpg' }])
 
-EquipmentCategory.create([{ category: 'Flooring &amp; Tile', cat_img:'tile-saw.jpg' }])
+EquipmentCategory.create([{ category: 'Flooring & Tile', cat_img:'tile-saw.jpg' }])
 
-EquipmentCategory.create([{ category: 'Generators &amp; Fans', cat_img:'Honda-Generator.jpg' }])
+EquipmentCategory.create([{ category: 'Generators & Fans', cat_img:'Honda-Generator.jpg' }])
 
-EquipmentCategory.create([{ category: 'Hoists &amp; Jacks', cat_img:'engine-hoist.jpg' }])
+EquipmentCategory.create([{ category: 'Hoists & Jacks', cat_img:'engine-hoist.jpg' }])
 
-EquipmentCategory.create([{ category: 'Lawn &amp; Landscape', cat_img:'tiller_husqvarna_2.jpg' }])
+EquipmentCategory.create([{ category: 'Lawn & Landscape', cat_img:'tiller_husqvarna_2.jpg' }])
 
-EquipmentCategory.create([{ category: 'Material Handling &amp; Moving', cat_img:'pallet-jack.jpg' }])
+EquipmentCategory.create([{ category: 'Material Handling & Moving', cat_img:'pallet-jack.jpg' }])
 
-EquipmentCategory.create([{ category: 'Pumps &amp; Pressure Washers', cat_img:'generac-pressure-washer.png' }])
+EquipmentCategory.create([{ category: 'Pumps & Pressure Washers', cat_img:'generac-pressure-washer.png' }])
 
 
-EquipmentCategory.create([{ category: 'Saws &amp; Woodworking', cat_img:'miter-saw.jpg' }])
+EquipmentCategory.create([{ category: 'Saws & Woodworking', cat_img:'miter-saw.jpg' }])
 
 EquipmentCategory.create([{ category: 'Trailers', cat_img:'dump-trailer-2.jpeg' }])
