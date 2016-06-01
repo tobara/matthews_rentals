@@ -1,0 +1,144 @@
+
+
+
+
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title">
+
+			<div class="container clearfix">
+				<h1>Equipment Rental</h1>
+				<span>Equipment By Catagory Type</span>
+				<ol class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li class="active">Equipment Rental</li>
+				</ol>
+			</div>
+
+		</section><!-- #page-title end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<!-- Post Content
+					============================================= -->
+					<div class="postcontent nobottommargin col_last">
+
+						<!-- Portfolio Filter
+						============================================= -->
+				<!--	<ul id="portfolio-filter" class="clearfix">
+
+							<li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
+							<li><a href="#" data-filter=".pf-icons">Icons</a></li>
+							<li><a href="#" data-filter=".pf-illustrations">Illustrations</a></li>
+							<li><a href="#" data-filter=".pf-uielements">UI Elements</a></li>
+							<li><a href="#" data-filter=".pf-media">Media</a></li>
+							<li><a href="#" data-filter=".pf-graphics">Graphics</a></li>
+
+						</ul><!-- #portfolio-filter end -->
+
+				<!--	<div id="portfolio-shuffle">
+							<i class="icon-random"></i>
+						</div>
+
+						<div class="clear"></div> -->
+
+						<!-- Portfolio Items
+						============================================= -->
+						<div id="portfolio" class="portfolio-3 clearfix">
+						<% @equipment_categories.each do |category| %>
+							<article class="portfolio-item pf-media pf-icons">
+								<div class="portfolio-image">
+									<a href="portfolio-single.html">
+										<%= image_tag ("categories/#{category.cat_img}") %>
+									</a>
+									<div class="portfolio-overlay">
+										<a href="images/portfolio/full/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+										<a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+									</div>
+								</div>
+								<div class="portfolio-desc">
+									<h3><%= link_to category.category, equipment_categories_path(@equipment_category) %></a></h3>
+								</div>
+							</article>
+							<% end %>
+
+
+						</div><!-- #portfolio end -->
+
+						<!-- Portfolio Script
+						============================================= -->
+						<script type="text/javascript">
+
+							jQuery(window).load(function(){
+
+								var $container = $('#portfolio');
+
+								$container.isotope({ transitionDuration: '0.65s' });
+
+								$('#portfolio-filter a').click(function(){
+									$('#portfolio-filter li').removeClass('activeFilter');
+									$(this).parent('li').addClass('activeFilter');
+									var selector = $(this).attr('data-filter');
+									$container.isotope({ filter: selector });
+									return false;
+								});
+
+								$('#portfolio-shuffle').click(function(){
+								$container.isotope('updateSortData').isotope({
+									sortBy: 'random'
+								});
+							});
+
+								$(window).resize(function() {
+									$container.isotope('layout');
+								});
+
+							});
+
+						</script><!-- Portfolio Script End -->
+
+					</div><!-- .postcontent end -->
+
+					<!-- Sidebar
+					============================================= -->
+					<div class="sidebar nobottommargin">
+						<div class="sidebar-widgets-wrap">
+
+							<div class="widget widget_links clearfix">
+
+								<h4>Equipment Types</h4>
+								<ul>
+									<li><a href="#">Air Tools &amp; Compressors</a></li>
+									<li><a href="#">Automotive</a></li>
+									<li><a href="#">Compaction</a></li>
+									<li><a href="#">Concrete</a></li>
+									<li><a href="#">Drills &amp; Demolition</a></li>
+									<li><a href="#">Fastening Tools</a></li>
+									<li><a href="#">Flooring &amp; Tile</a></li>
+									<li><a href="#">Generators &amp; Fans</a></li>
+									<li><a href="#">Hoists &amp; Jacks</a></li>
+									<li><a href="#">Lawn &amp; Landscape</a></li>
+									<li><a href="#">Material Handling &amp; Moving</a></li>
+									<li><a href="#">Pumps &amp; Pressure Washers</a></li>
+									<li><a href="#">Saws &amp; Woodworking</a></li>
+									<li><a href="#">Trailers</a></li>
+								</ul>
+
+							</div>
+
+						</div>
+					</div><!-- .sidebar end -->
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+

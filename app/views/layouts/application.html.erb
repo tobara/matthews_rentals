@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="SemiColonWeb" />
+
+  <!-- Stylesheets
+  ============================================= -->
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+
+
+  <!-- Document Title
+  ============================================= -->
+
+
+   <title>MatthewsRental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "animate", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "bootstrap", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "dark", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "style", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "font-icons", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "magnific-popup", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "responsive", media: "all", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "canvas.slider.fade", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "events-data", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "function", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.calendario", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.elastic", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.gmap", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.mousewheel.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.nivo", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.vmap", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "plugins", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+
+
+<body>
+
+<%= render 'layouts/header' %>
+
+
+
+<%= yield %>
+
+<%= render 'layouts/footer' %>
+
+</body>
+</html>
