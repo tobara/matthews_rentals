@@ -16,15 +16,17 @@
 = require bootstrap
 = require calendar
 = require camera
-= require colors
 = require dark
 = require elastic
 = require font-icons
-= require font
+= require fonts
 = require magnific-popup
 = require nivo-slider
 = require responsive
 = require vmap
+= require construction
+
+/*= require colors*/
 
 
 

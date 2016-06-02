@@ -6,6 +6,3 @@ EquipmentRental.create(
                           equipment_img_two: '2013HSP_2.jpg', equipment_img_three: '2013HSP_3.jpg',
                           hourly_rate: '$75.00', daily_rate: '$100.00', weekly_rate: '$400.00', equipment_category_id: '4' }]
                           )
-
-
-

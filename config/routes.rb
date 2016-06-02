@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'equipment_categories#index'
 
   resources :equipment_categories do
+    resources :equipment_rentals do
+    end
   end
 
 end
