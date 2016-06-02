@@ -10,9 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-= require_tree .
+
 = require_self
-= require animate
+
 = require bootstrap
 = require calendar
 = require camera
@@ -20,12 +20,12 @@
 = require elastic
 = require font-icons
 = require fonts
-= require magnific-popup
-= require nivo-slider
-= require responsive
-= require vmap
-= require construction
 
+
+= require responsive
+
+= require construction
+= require_tree .
 /*= require colors*/
 
 

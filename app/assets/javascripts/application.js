@@ -13,14 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require canvas.slider.fade
+
 //= require events-data
 //= require functions
 //= require jquery.calendario
 //= require jquery.elastic
-//= require jquery.gmap
 //= require jquery.mousewheel.min
-//= require jquery.nivo
-//= require jquery.vmap
 //= require plugins
 //= require_tree .
+

@@ -1,8 +1,6 @@
 
 
-<%= stylesheet_link_tag "colors", media: "all", "data-turbolinks-track" => true %>
-<%= stylesheet_link_tag "construction", media: "all", "data-turbolinks-track" => true %>
-<%= stylesheet_link_tag "style", media: "all", "data-turbolinks-track" => true %>
+
 
 <body class="stretched">
 
@@ -39,7 +37,6 @@
                 <ul>
                   <li><a href="#">Boscawen, NH</a></li>
                 </ul>
-              </li>
               <li><a href="#">Login</a></li>
             </ul>
           </div><!-- .top-links end -->
@@ -59,8 +56,8 @@
         <!-- Logo
         ============================================= -->
         <div id="logo">
-          <a href="index.html" class="standard-logo"><img src="demos/construction/images/logo.png" alt="Canvas Logo"></a>
-          <a href="index.html" class="retina-logo"><img src="demos/construction/images/logo@2x.png" alt="Canvas Logo"></a>
+          <a href="index.html" class="standard-logo"><%= image_tag('logo.png', alt: "Canvas Logo") %> </a>
+          <a href="index.html" class="retina-logo"><%= image_tag('logo@2x.png', alt: "Canvas Logo") %> </a>
         </div><!-- #logo end -->
 
         <ul class="header-extras">
