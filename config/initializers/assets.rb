@@ -37,5 +37,6 @@ Rails.application.config.assets.precompile += %w( jquery.vmap.js )
 Rails.application.config.assets.precompile += %w( plugins.js )
 Rails.application.config.assets.precompile += %w( functions.js )
 Rails.application.config.assets.precompile += %w( construction.css )
+Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 
 

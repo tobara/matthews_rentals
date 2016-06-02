@@ -15,6 +15,7 @@ class EquipmentCategoriesController < ApplicationController
     def show
 
       @equipment_category = EquipmentCategory.find(params[:id])
+      @category_rentals = EquipmentRental.where(equipment_category_id: params[:id])
       render :show
     end
 end

@@ -5,12 +5,12 @@
 		<section id="page-title">
 
 			<div class="container clearfix">
-				<h1>Lawn &amp; Landscape</h1>
+				<h1><%= @equipment_category.category %></h1>
 				<span>Chippers, Tillers, Mowers &amp; More</span>
 				<ol class="breadcrumb">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Equipment Rental</a></li>
-					<li class="active">Lawn &amp; Landscape</li>
+					<li class="active"><%= @equipment_category.category %></li>
 				</ol>
 			</div>
 
@@ -30,27 +30,27 @@
 
 						<!-- Shop
 						============================================= -->
+						<% @category_rentals.each do |rental|%>
 						<div id="shop" class="product-1 clearfix">
-
 							<div class="product clearfix">
 								<div class="product-image">
-									<a href="#"><img src="images/equipment/lawn-landscape/bandit-90xp/bandit-90xp-300x300.jpg" alt="Bandit - 90xp Brush Chipper"></a>
+									<a href="#"><%= image_tag ("#{rental.category_index_img}") %></a>
 									<div class="product-overlay">
 										<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
 										<a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
 									</div>
 								</div>
 								<div class="product-desc">
-									<div class="product-title"><h3><a href="#">Brush Chipper</a></h3></div>
-									<div><h5>Bandit XP90</h5></div>
+									<div class="product-title"><h3><a href="#"><%= rental.equipment_name %></a></h3></div>
+									<div><h5><%= "#{rental.model} #{rental.make}" %></h5></div>
 										<div class="row">
 										<div class="col-md-8">
-										<p>The model 90 is built tough with a powerful dual feed system.  This unit features a wide 17 inch chipper opening and has the power to pull whole trees into the chipper.  So, if you are looking for a high production, yet compact hand fed chipper than the 90 is for you. </p>
+										<p> <%= rental.equipment_description %> </p>
 
 											<ul class="iconlist">
-												<li><i class="icon-caret-right"></i> 9" Chipping Capacity</li>
-												<li><i class="icon-caret-right"></i> 17" Feed Opening</li>
-												<li><i class="icon-caret-right"></i> Dual-Wheel Feed System</li>
+												<li><i class="icon-caret-right"></i> <%= rental.li_one %></li>
+												<li><i class="icon-caret-right"></i> <%= rental.li_two %></li>
+												<li><i class="icon-caret-right"></i> <%= rental.li_three %></li>
 											</ul>
 										</div>
 
@@ -69,15 +69,15 @@
 												  <tbody>
 													<tr>
 													  <td class="rental-price-body">4 Hour</td>
-													  <td>$ 140</td>
+													  <td><%= rental.hourly_rate %></td>
 													</tr>
 													<tr>
 												      <td class="rental-price-body">Daily</td>
-													  <td>$ 225</td>
+													  <td><%= rental.daily_rate %></td>
 													</tr>
 													<tr>
 													  <td class="rental-price-body">Weekly</td>
-													  <td>Call</td>
+													  <td><%= rental.weekly_rate %></td>
 													</tr>
 												  </tbody>
 												</table>
@@ -88,6 +88,7 @@
 									</div>
 								</div>
 							</div>
+							<% end %>
 
 
 
