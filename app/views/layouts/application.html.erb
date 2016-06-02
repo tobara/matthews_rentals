@@ -22,19 +22,21 @@
 <%= stylesheet_link_tag "dark", media: "all", "data-turbolinks-track" => true %>
 <%= stylesheet_link_tag "style", media: "all", "data-turbolinks-track" => true %>
 <%= stylesheet_link_tag "font-icons", media: "all", "data-turbolinks-track" => true %>
-<%= stylesheet_link_tag "magnific-popup", media: "all", "data-turbolinks-track" => true %>
-<%= stylesheet_link_tag "responsive", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.mousewheel.min", "data-turbolinks-track" => true %>
 
+<%= stylesheet_link_tag "responsive", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "colors", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "construction", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "style", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "canvas.slider.fade", "data-turbolinks-track" => true %>
+
 <%= javascript_include_tag "events-data", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "functions", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "jquery.calendario", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "jquery.elastic", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "jquery.gmap", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "jquery.mousewheel.min", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "jquery.nivo", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "jquery.vmap", "data-turbolinks-track" => true %>
+
+
 <%= javascript_include_tag "plugins", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
