@@ -1,0 +1,11 @@
+EquipmentRental.create(
+                          [{ equipment_name: 'Concrete Saw, 16” Walk Behind', make: '2013HSP', model: 'MK Diamond',
+                          equipment_description: 'MK-20 Series of concrete saws combine innovation and engineering to produce one of the lightest, mid-size self-propelled concrete saws available. Engine weight is evenly distributed over the blade shaft for added stability and tracking. Depth control assembly is engineered for smooth, controlled blade insertion.',
+                          li_one: 'Blade Capacity: 18”', li_two:'Cut Depth: 6-⅝”', li_three: 'Blade Guard Mounts on Both Left or Right Side',
+                          category_index_img: '2013HSP_index.jpg', equipment_img_one: '2013HSP_1.jpg',
+                          equipment_img_two: '2013HSP_2.jpg', equipment_img_three: '2013HSP_3.jpg',
+                          hourly_rate: '$75.00', daily_rate: '$100.00', weekly_rate: '$400.00', equipment_category_id: '4' }]
+                          )
+
+
+
