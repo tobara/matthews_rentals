@@ -1,41 +1,29 @@
-EquipmentCategory.create([{ category: 'Air Tools & Compressors', cat_img:'compressor.jpg' }])
+require 'csv'
 
-EquipmentCategory.create([{ category: 'Automotive', cat_img:'cat_charger.jpg' }])
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'concrete.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  t = EquipmentRental.new
+  t.equipment_name = row['equipment_name']
+  t.make = row['make']
+  t.model = row['model']
+  t.equipment_description = row['equipment_description']
+  t.li_one = row['li_one']
+  t.li_two = row['li_two']
+  t.li_three = row['li_three']
+  t.category_index_img = row['category_index_img']
+  t.equipment_img_one = row['equipment_img_one']
+  t.equipment_img_two = row['equipment_img_two']
+  t.equipment_img_three = row['equipment_img_three']
+  t.equipment_img_four = row['equipment_img_four']
+  t.equipment_img_five = row['equipment_img_five']
+  t.equipment_img_six = row['equipment_img_six']
+  t.hourly_rate = row['hourly_rate']
+  t.daily_rate = row ['daily_rate']
+  t.weekly_rate = row ['weekly_rate']
+  t.equipment_category_id = row ['equipment_category_id']
+  t.save
+end
 
-EquipmentCategory.create([{ category: 'Compaction', cat_img:'compactor.jpg' }])
+puts "There are now #{EquipmentRental.count} rows in the transactions table"
 
-EquipmentCategory.create([{ category: 'Concrete ', cat_img:'concrete_saw.jpg' }])
-
-EquipmentCategory.create([{ category: 'Drills & Demolition', cat_img:'demo-drill.jpg' }])
-
-
-EquipmentCategory.create([{ category: 'Earth Moving', cat_img:'tractor-backhoe.jpg' }])
-
-
-EquipmentCategory.create([{ category: 'Fastening Tools', cat_img:'nail-gun-2.jpg' }])
-
-EquipmentCategory.create([{ category: 'Flooring & Tile', cat_img:'tile-saw.jpg' }])
-
-EquipmentCategory.create([{ category: 'Generators & Fans', cat_img:'Honda-Generator.jpg' }])
-
-EquipmentCategory.create([{ category: 'Hoists & Jacks', cat_img:'engine-hoist.jpg' }])
-
-EquipmentCategory.create([{ category: 'Lawn & Landscape', cat_img:'tiller_husqvarna_2.jpg' }])
-
-EquipmentCategory.create([{ category: 'Material Handling & Moving', cat_img:'pallet-jack.jpg' }])
-
-EquipmentCategory.create([{ category: 'Pumps & Pressure Washers', cat_img:'generac-pressure-washer.png' }])
-
-
-EquipmentCategory.create([{ category: 'Saws & Woodworking', cat_img:'miter-saw.jpg' }])
-
-EquipmentCategory.create([{ category: 'Trailers', cat_img:'dump-trailer-2.jpeg' }])
-
-EquipmentRental.create(
-                          [{ equipment_name: 'Concrete Saw, 16” Walk Behind', make: '2013HSP', model: 'MK Diamond',
-                          equipment_description: 'MK-20 Series of concrete saws combine innovation and engineering to produce one of the lightest, mid-size self-propelled concrete saws available. Engine weight is evenly distributed over the blade shaft for added stability and tracking. Depth control assembly is engineered for smooth, controlled blade insertion.',
-                          li_one: 'Blade Capacity: 18”', li_two:'Cut Depth: 6-⅝”', li_three: 'Blade Guard Mounts on Both Left or Right Side',
-                          category_index_img: '2013HSP_index.jpg', equipment_img_one: '2013HSP_1.jpg',
-                          equipment_img_two: '2013HSP_2.jpg', equipment_img_three: '2013HSP_3.jpg',
-                          hourly_rate: '$75.00', daily_rate: '$100.00', weekly_rate: '$400.00', equipment_category_id: '4' }]
-                          )

@@ -13,7 +13,7 @@ class EquipmentCategoriesController < ApplicationController
     end
 
     def show
-
+      @equipment_categories = EquipmentCategory.all
       @equipment_category = EquipmentCategory.find(params[:id])
       @category_rentals = EquipmentRental.where(equipment_category_id: params[:id])
       render :show
