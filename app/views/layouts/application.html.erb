@@ -32,7 +32,7 @@
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
 <%= javascript_include_tag "events-data", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "functions", "data-turbolinks-track" => true %>
+
 <%= javascript_include_tag "jquery.calendario", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "jquery.elastic", "data-turbolinks-track" => true %>
 
@@ -47,8 +47,8 @@
 
 <%= render 'layouts/header' %>
 
-
-
+<%= javascript_include_tag 'functions.js', "data-turbolinks-track" => true %>
+<div data-animate="loaderStyleHtml" data-loader-timeout="10"></div>
 <%= yield %>
 
 <%= render 'layouts/footer' %>
