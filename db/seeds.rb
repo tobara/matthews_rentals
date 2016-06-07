@@ -89,7 +89,7 @@ end
 
 puts "There are now #{EquipmentRental.count} rows in the drills table"
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'remaining.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'Remaining.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   t = EquipmentRental.new
