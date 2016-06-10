@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'equipment_categories#index'
+  root 'homes#index'
+  scope :homes, :controller => 'homes', :path => 'home' do
+    get 'about', :path => '/About-Us'
+    get 'contact_us', :path => '/Contact-Us'
+    get 'login', :path => '/Login'
+  end
   resources :equipment_sales, only: [:index]
   resources :equipment_purchasing, only: [:index]
   resources :equipment_categories do

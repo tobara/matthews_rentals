@@ -1,0 +1,93 @@
+
+<%= stylesheet_link_tag "responsive", media: "all", "data-turbolinks-track" => true %>
+
+
+    <!-- Page Title
+    ============================================= -->
+    <section id="page-title">
+
+      <div class="container clearfix">
+        <h1>ABOUT </h1>
+        <h1>COMING SOON</h1>
+        <span>Check Back Later.  Our site is currently under maintenance.</span>
+        <ol class="breadcrumb">
+        <%= render_breadcrumbs %>
+        </ol>
+      </div>
+
+    </section><!-- #page-title end -->
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+      <div class="content-wrap">
+
+        <div class="container clearfix">
+
+          <!-- Post Content
+          ============================================= -->
+          <div class="postcontent nobottommargin col_last">
+
+            <!-- Portfolio Filter
+            ============================================= -->
+        <!--  <ul id="portfolio-filter" class="clearfix">
+
+              <li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
+              <li><a href="#" data-filter=".pf-icons">Icons</a></li>
+              <li><a href="#" data-filter=".pf-illustrations">Illustrations</a></li>
+              <li><a href="#" data-filter=".pf-uielements">UI Elements</a></li>
+              <li><a href="#" data-filter=".pf-media">Media</a></li>
+              <li><a href="#" data-filter=".pf-graphics">Graphics</a></li>
+
+            </ul><!-- #portfolio-filter end -->
+
+        <!--  <div id="portfolio-shuffle">
+              <i class="icon-random"></i>
+            </div>
+
+            <div class="clear"></div> -->
+
+            <!-- Portfolio Items
+            ============================================= -->
+            <div id="portfolio">
+                <div class="portfolio-image">
+                    <%= image_tag ('coming_soon.jpg') %>
+
+                </div>
+              </div>
+                <!-- #portfolio end -->
+
+            <!-- Portfolio Script
+            ============================================= -->
+<!-- Portfolio Script End -->
+
+          </div><!-- .postcontent end -->
+
+          <!-- Sidebar
+          ============================================= -->
+          <div class="sidebar nobottommargin">
+            <div class="sidebar-widgets-wrap">
+
+              <div class="widget widget_links clearfix">
+
+                <h4>Equipment Types</h4>
+                <ul>
+                <% @equipment_categories.each do |category| %>
+
+                  <li><%= link_to "#{category.category}", equipment_category_path(category.id) %></li>
+                  <% end %>
+                </ul>
+
+              </div>
+
+            </div>
+          </div><!-- .sidebar end -->
+
+        </div>
+
+      </div>
+
+    </section><!-- #content end -->
+
+
