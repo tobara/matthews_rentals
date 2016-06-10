@@ -55,7 +55,17 @@
 								<div class="portfolio-image">
 										<%= image_tag ("categories/#{category.cat_img}") %>
 									<div class="portfolio-overlay">
-										<a href="<%=equipment_category_path(category) %>" class="center-icon"><i class="icon-files"></i></a>
+										<% if (category.id == 2) || (category.id == 7) || (category.id == 10)  %>
+											<a href="<%= new_equipment_category_path %>" class="center-icon"><i class="icon-files"></i></a>
+																				</div>
+								</div>
+								<div class="portfolio-desc">
+									<h3><%= link_to "#{category.category}", new_equipment_category_path %></h3>
+								</div>
+							</article>
+										<% else %>
+											<a href="<%=equipment_category_path(category) %>" class="center-icon"><i class="icon-files"></i></a>
+
 
 									</div>
 								</div>
@@ -63,6 +73,7 @@
 									<h3><%= link_to "#{category.category}", {:action => :show, :id => category.id} %></h3>
 								</div>
 							</article>
+								<% end %>
 							<% end %>
 
 
