@@ -1,0 +1,624 @@
+
+		<section id="slider" class="slider-parallax swiper_wrapper clearfix" style="height: 550px;">
+
+			<div class="swiper-container swiper-parent">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" style="background-image: url('<%= asset_path("banner/ready-to-work.png") %>'); background-position: center top;">
+						<div class="container clearfix">
+							<div class="slider-caption">
+								<h2>Rental Equipment</h2>
+								<p>Wether You Are A Homeowner Or Contractor  If It's Equipment You Need, We Are Your Perfect Solution.</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="container clearfix">
+							<div class="slider-caption slider-caption-right">
+								<h2>Equipment Purchasing</h2>
+								<p>Looks beautiful &amp; ultra-sharp on Retina Screen Displays. Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
+							</div>
+						</div>
+						<div class="video-wrap">
+							<video id="slide-video" poster="demos/construction/images/videos/1.jpg" preload="auto" loop autoplay muted>
+								<source src='demos/construction/images/videos/1.webm' type='video/webm' />
+								<source src='demos/construction/images/videos/1.mp4' type='video/mp4' />
+							</video>
+							<div class="video-overlay" style="background-color: rgba(0,0,0,0.1);"></div>
+						</div>
+					</div>
+					<div class="swiper-slide" style="background-image: url('demos/construction/images/slider/1.jpg'); background-position: center bottom;">
+						<div class="container clearfix">
+							<div  class="slider-caption">
+								<h2>Equipment Sales</h2>
+								<p>You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
+				<div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
+			</div>
+
+			<script>
+				jQuery(document).ready(function($){
+					var swiperSlider = new Swiper('.swiper-parent',{
+						paginationClickable: false,
+						slidesPerView: 1,
+						simulateTouch: false,
+						grabCursor: false,
+						loop: true,
+						onSwiperCreated: function(swiper){
+							$('[data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var toAnimateDelay = $(this).attr('data-caption-delay');
+								var toAnimateDelayTime = 0;
+								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 750; } else { toAnimateDelayTime = 750; }
+								if( !$toAnimateElement.hasClass('animated') ) {
+									$toAnimateElement.addClass('not-animated');
+									var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+									setTimeout(function() {
+										$toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+									}, toAnimateDelayTime);
+								}
+							});
+							SEMICOLON.slider.swiperSliderMenu();
+						},
+						onSlideChangeStart: function(swiper){
+							$('[data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+								$toAnimateElement.removeClass('animated').removeClass(elementAnimation).addClass('not-animated');
+							});
+							SEMICOLON.slider.swiperSliderMenu();
+						},
+						onSlideChangeEnd: function(swiper){
+							$('#slider').find('.swiper-slide').each(function(){
+								if($(this).find('video').length > 0) { $(this).find('video').get(0).pause(); }
+							});
+							$('#slider').find('.swiper-slide:not(".swiper-slide-active")').each(function(){
+								if($(this).find('video').length > 0) {
+									if($(this).find('video').get(0).currentTime != 0 ) $(this).find('video').get(0).currentTime = 0;
+								}
+							});
+							if( $('#slider').find('.swiper-slide.swiper-slide-active').find('video').length > 0 ) { $('#slider').find('.swiper-slide.swiper-slide-active').find('video').get(0).play(); }
+
+							$('#slider .swiper-slide.swiper-slide-active [data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var toAnimateDelay = $(this).attr('data-caption-delay');
+								var toAnimateDelayTime = 0;
+								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 300; } else { toAnimateDelayTime = 300; }
+								if( !$toAnimateElement.hasClass('animated') ) {
+									$toAnimateElement.addClass('not-animated');
+									var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+									setTimeout(function() {
+										$toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+									}, toAnimateDelayTime);
+								}
+							});
+						}
+					});
+
+					$('#slider-arrow-left').on('click', function(e){
+						e.preventDefault();
+						swiperSlider.swipePrev();
+					});
+
+					$('#slider-arrow-right').on('click', function(e){
+						e.preventDefault();
+						swiperSlider.swipeNext();
+					});
+				});
+			</script>
+
+		</section>
+
+		<!-- Content
+		============================================= -->
+		<a href="<%= equipment_categories_path %>" class="button button-3d nobottomborder button-full center tright t300 font-primary" style="font-size: 26px;">
+			<div class="container clearfix">
+				SEE OUR CATALOG OF RENTAL EQUIPMENT: <strong>Take A Look</strong> <i class="icon-angle-right" style="top:3px;"></i>
+			</div>
+		</a>
+
+		<section id="content">
+
+			<div class="content-wrap nobottompadding">
+
+		<!-- 		<div class="promo promo-dark promo-full uppercase bottommargin-lg header-stick">
+					<div class="container clearfix">
+						<h3 style="letter-spacing: 2px;">See Our Entire Catalog of Rental Equipment</h3>
+						<span>We have the right tool for the job</span>
+						<a href="#" class="button button-large button-border button-rounded">Take A Look</a>
+					</div>
+				</div> -->
+
+				<div class="container clearfix">
+
+					<div class="col_one_third bottommargin-sm">
+						<div class="feature-box media-box">
+							<div class="fbox-media">
+								<img style="border-radius: 2px;" src="demos/construction/images/services/1.jpg" alt="Why choose Us?">
+							</div>
+							<div class="fbox-desc">
+								<h3>Buy<span class="subtitle">Your Property in Good Hands.</span></h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi rem, facilis nobis voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col_one_third bottommargin-sm">
+						<div class="feature-box media-box">
+							<div class="fbox-media">
+								<img style="border-radius: 2px;" src="<%= asset_path("banner/ready_to_rent_350x200.jpg") %>" alt="Effective Planning">
+							</div>
+							<div class="fbox-desc">
+								<h3>Rent<span class="subtitle">Construction Process Organized.</span></h3>
+								<p>Porro repellat vero sapiente amet vitae quibusdam necessitatibus consectetur, labore totam. Accusamus perspiciatis asperiores labore esse.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col_one_third bottommargin-sm col_last">
+						<div class="feature-box media-box">
+							<div class="fbox-media">
+								<img style="border-radius: 2px;" src="demos/construction/images/services/2.jpg" alt="Why choose Us?">
+							</div>
+							<div class="fbox-desc">
+								<h3>Sell<span class="subtitle">We have got you Covered.</span></h3>
+								<p>Quos, non, esse eligendi ab accusantium voluptatem. Maxime eligendi beatae, atque tempora ullam. Vitae delectus quia, consequuntur rerum quo.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="clear"></div><div class="line notopmargin"></div>
+				</div>
+
+				<div class="container clearfix">
+
+					<!-- Portfolio Filter
+					============================================= -->
+			<!--	<ul id="portfolio-filter" class="clearfix">
+
+						<li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
+						<li><a href="#" data-filter=".pf-icons">Icons</a></li>
+						<li><a href="#" data-filter=".pf-illustrations">Illustrations</a></li>
+						<li><a href="#" data-filter=".pf-uielements">UI Elements</a></li>
+						<li><a href="#" data-filter=".pf-media">Media</a></li>
+						<li><a href="#" data-filter=".pf-graphics">Graphics</a></li>
+
+					</ul><!-- #portfolio-filter end -->
+
+			<!--	<div id="portfolio-shuffle">
+						<i class="icon-random"></i>
+					</div>
+
+					<div class="clear"></div>
+
+					<!-- Portfolio Items
+					============================================= -->
+					<div id="portfolio" class="portfolio-6 clearfix">
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[0].id) %>">
+									<img src="<%= asset_path('home/compressor_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[0].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[0].id) %>">Air Tools &amp; Compressors</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= new_equipment_category_path %>">
+									<img src="<%= asset_path('home/automotive_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= new_equipment_category_path %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= new_equipment_category_path %>">Automotive</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[2].id) %>">
+									<img src="<%= asset_path('home/compactor_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[2].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[2].id) %>">Compaction</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[3].id) %>">
+									<img src="<%= asset_path('home/concrete_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[3].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[3].id) %>">Concrete</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[4].id) %>">
+									<img src="<%= asset_path('home/drill_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[4].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[4].id) %>">Drills &amp; Demolition</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[5].id) %>">
+									<img src="<%= asset_path('home/earth_moving_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[5].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[5].id) %>">Earth Moving</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= new_equipment_category_path %>">
+									<img src="<%= asset_path('home/fastening_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= new_equipment_category_path %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= new_equipment_category_path %>">Fastening Equipment</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[7].id) %>">
+									<img src="<%= asset_path('home/tile_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[7].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[7].id) %>">Flooring &amp; Tile</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[8].id) %>">
+									<img src="<%= asset_path('home/generator_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[8].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[8].id) %>">Generators &amp; Fans</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= new_equipment_category_path %>">
+									<img src="<%= asset_path('home/hoist_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= new_equipment_category_path %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= new_equipment_category_path %>">Hoists &amp; Jacks</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[10].id) %>">
+									<img src="<%= asset_path('home/lawn_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[10].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[10].id) %>">Lawn &amp; Landscape</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[11].id) %>">
+									<img src="<%= asset_path('home/material_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[11].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[11].id) %>">Material Handling &amp; Moving</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[12].id) %>">
+									<img src="<%= asset_path('home/pumps_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[12].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[12].id) %>">Pumps &amp; Pressure Washers</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[13].id) %>">
+									<img src="<%= asset_path('home/woodworking_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[13].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[13].id) %>">Saws &amp; Woodworking</a></h3>
+							</div>
+						</article>
+
+						<article class="portfolio-item pf-media pf-icons">
+							<div class="portfolio-image">
+								<a href="<%= equipment_category_path(@equipment_categories[14].id) %>">
+									<img src="<%= asset_path('home/trailer_home.jpg') %>" alt="Open Imagination">
+								</a>
+								<div class="portfolio-overlay">
+									<a href="<%= equipment_category_path(@equipment_categories[14].id) %>" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+
+								</div>
+							</div>
+							<div class="portfolio-desc">
+								<h3 class="center"><a href="<%= equipment_category_path(@equipment_categories[14].id) %>">Trailers</a></h3>
+							</div>
+						</article>
+
+
+					</div><!-- #portfolio end -->
+
+				</div>
+
+
+				<div class="container clearfix">
+					<h3></h3>
+				</div>
+
+				<div id="google-map2" style="height: 250px;" class="gmap"></div>
+
+
+				<script type="text/javascript">
+
+				$('#google-map2').gMap({
+
+					 address: '161 King Street, Boscawen, NH 03303 USA',
+					 maptype: 'ROADMAP',
+					 zoom: 8,
+					 markers: [
+						{
+							address: "161 King Street, Boscawen, NH 03303 USA",
+							html: "161 King Street, Boscawen, NH 03303 USA"
+						},
+					 ],
+					 doubleclickzoom: false,
+					 controls: {
+						 panControl: true,
+						 zoomControl: true,
+						 mapTypeControl: false,
+						 scaleControl: false,
+						 streetViewControl: false,
+						 overviewMapControl: false
+					 }
+
+				});
+
+				</script>
+
+
+			<!--	<div class="col_two_fifth">
+						<h4>Clients Overview</h4>
+
+						<p>We prize our Clients more than everything else. We strive to provide Quality Services to all our Clients on a Priority Basis. You are invited to join our Clients List and enjoy our Services. <a href="#">See more...</a></p>
+
+						<ul class="clients-grid grid-3 nobottommargin clearfix">
+							<li style="padding: 20px;"><a href="#"><img src="images/clients/1.png" alt="Clients"></a></li>
+							<li style="padding: 20px;"><a href="#"><img src="images/clients/2.png" alt="Clients"></a></li>
+							<li style="padding: 20px;"><a href="#"><img src="images/clients/3.png" alt="Clients"></a></li>
+							<li style="padding: 20px;"><a href="#"><img src="images/clients/4.png" alt="Clients"></a></li>
+							<li style="padding: 20px;"><a href="#"><img src="images/clients/5.png" alt="Clients"></a></li>
+							<li style="padding: 20px;"><a href="#"><img src="images/clients/6.png" alt="Clients"></a></li>
+						</ul>
+					</div>
+
+					<div class="col_three_fifth col_last">
+						<h4>Recent News</h4>
+
+						<div id="oc-posts" class="owl-carousel posts-carousel">
+
+							<div class="oc-item">
+								<div class="ipost clearfix">
+									<div class="entry-image">
+										<a href="demos/construction/images/blog/5.jpg" data-lightbox="image"><img class="image_fade" src="demos/construction/images/blog/5.jpg" alt="Standard Post with Image"></a>
+									</div>
+									<div class="entry-title">
+										<h3><a href="#">Upcoming Projects in Australia</a></h3>
+									</div>
+									<ul class="entry-meta clearfix">
+										<li>10th Feb 2014</li>
+										<li><a href="#comments">13 Comments</a></li>
+									</ul>
+									<div class="entry-content">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="oc-item">
+								<div class="ipost clearfix">
+									<div class="entry-image">
+										<div class="fslider" data-arrows="false" data-lightbox="gallery">
+											<div class="flexslider">
+												<div class="slider-wrap">
+													<div class="slide"><a href="demos/construction/images/blog/2.jpg" data-lightbox="gallery-item"><img class="image_fade" src="demos/construction/images/blog/2.jpg" alt="Standard Post with Gallery"></a></div>
+													<div class="slide"><a href="demos/construction/images/blog/1.jpg" data-lightbox="gallery-item"><img class="image_fade" src="demos/construction/images/blog/1.jpg" alt="Standard Post with Gallery"></a></div>
+													<div class="slide"><a href="demos/construction/images/blog/3.jpg" data-lightbox="gallery-item"><img class="image_fade" src="demos/construction/images/blog/3.jpg" alt="Standard Post with Gallery"></a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="entry-title">
+										<h3><a href="#">Real Estate just got a little more Expensive</a></h3>
+									</div>
+									<ul class="entry-meta clearfix">
+										<li>24th Feb 2014</li>
+										<li><a href="#comments">21 Comments</a></li>
+									</ul>
+									<div class="entry-content">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem!</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="oc-item">
+								<div class="ipost clearfix">
+									<div class="entry-image">
+										<a href="demos/construction/images/blog/4.jpg" data-lightbox="image"><img class="image_fade" src="demos/construction/images/blog/4.jpg" alt="Standard Post with Image"></a>
+									</div>
+									<div class="entry-title">
+										<h3><a href="#">Global Excellence Construction Award</a></h3>
+									</div>
+									<ul class="entry-meta clearfix">
+										<li>5th May 2014</li>
+										<li><a href="#comments">6 Comments</a></li>
+									</ul>
+									<div class="entry-content">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<script type="text/javascript">
+
+							jQuery(document).ready(function($) {
+
+								var ocPosts = $("#oc-posts");
+
+								ocPosts.owlCarousel({
+									margin: 20,
+									nav: true,
+									navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+									autoplay: false,
+									autoplayHoverPause: true,
+									dots: false,
+									responsive:{
+										0:{ items:1 },
+										600:{ items:2 },
+										1000:{ items:2 },
+										1200:{ items:2 }
+									}
+								});
+
+							});
+
+						</script>
+					</div>
+
+				</div>
+
+				<div class="line topmargin-sm"></div>
+
+				<div class="section nobg notopmargin nopadding footer-stick">
+					<div class="container clearfix">
+
+						<div class="row">
+							<div class="col-md-7">
+								<img src="demos/construction/images/services/bottom-trust.jpg" alt="Bottom Trust">
+							</div>
+							<div class="col-md-5 topmargin-sm">
+								<div class="heading-block nobottomborder">
+									<h2>You're in Good Hands.</h2>
+									<span class="ls1">Five Points that define Our Reliability.</span>
+								</div>
+
+								<ul class="iconlist iconlist-large iconlist-color">
+									<li><i class="icon-ok"></i> Market Leader since 1915</li>
+									<li><i class="icon-ok"></i> Positive Results within Deadlines</li>
+									<li><i class="icon-ok"></i> 100% Reliability &amp; Guarantee</li>
+									<li><i class="icon-ok"></i> Dedicated Professional Team of 500+</li>
+									<li><i class="icon-ok"></i> Unmatched After Project Completion Support</li>
+								</ul>
+							</div>
+						</div>
+
+					</div> -->
+
+			</div>
+
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+
+</body>
+</html>
