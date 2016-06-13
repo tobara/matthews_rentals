@@ -170,15 +170,19 @@
 							<div class="widget subscribe-widget clearfix">
 
 								<h4>Subscribe For Latest Offers</h4>
-								<h5>Subscribe to Our Newsletter to get Important News &amp; Amazing Offers:</h5>
-								<form action="#" role="form" class="notopmargin nobottommargin">
-									<div class="input-group divcenter">
-										<input type="text" class="form-control" placeholder="Enter your Email" required="">
-										<span class="input-group-btn">
-											<button class="btn btn-success" type="submit"><i class="icon-email2"></i></button>
-										</span>
-									</div>
-								</form>
+								<h5>Subscribe to Our Newsletter to get Important News &amp; New Equipment:</h5>
+
+			<form class="new_subscriber notopmargin nobottommargin" id="new_subscriber" action="/subscribers" accept-charset="UTF-8" method="post" novalidate="novalidate"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="DY6S5vxwDHGLC1AbGayOZm7v44Vq7ThGSMaiAowYIOxNij/uAg7qXUZF5FUQz/UH8G8pLXfwD7ponl6C07g8Ig==">
+ 				<div class="input-group divcenter">
+  				<input type="text" name="subscriber[email]" id="subscriber_email" class="form-control" placeholder="Enter your Email">
+  				<span class="input-group-btn">
+  					<button class="btn btn-success"  type="submit" name="commit" value="submit"><i class="icon-email2"></i></button>
+          </span>
+         </div>
+      </form>
+
+
+
 							</div>
 
 
