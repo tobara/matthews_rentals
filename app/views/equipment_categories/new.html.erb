@@ -72,10 +72,13 @@
 
                 <h4>Equipment Types</h4>
                 <ul>
-                <% @equipment_categories.each do |category| %>
-
-                  <li><%= link_to "#{category.category}", {:action => :show, :id => category.id} %></li>
-                  <% end %>
+              <% @equipment_categories.each do |category| %>
+                  <% if (category.id == 2) || (category.id == 7) || (category.id == 10)  %>
+                      <li><%= link_to "#{category.category}", new_equipment_category_path %></li>
+                    <% else %>
+                      <li><%= link_to "#{category.category}", {:action => :show, :id => category.id} %></li>
+                    <% end %>
+                <% end %>
                 </ul>
 
               </div>
