@@ -32,7 +32,7 @@ Rails.application.config.assets.precompile += %w( jquery.calendario.js )
 Rails.application.config.assets.precompile += %w( jquery.elastic.js )
 
 Rails.application.config.assets.precompile += %w( jquery.mousewheel.min.js )
-
+Rails.application.config.assets.precompile += %w( notify.js )
 Rails.application.config.assets.precompile += %w( plugins.js )
 Rails.application.config.assets.precompile += %w( functions.js )
 Rails.application.config.assets.precompile += %w( construction.css )
