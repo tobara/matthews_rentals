@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'contact_us', :path => '/Contact-Us'
     get 'login', :path => '/Login'
   end
+  resources :subscribers, only: [:create]
   resources :equipment_sales, only: [:index]
   resources :equipment_purchasing, only: [:index]
   resources :equipment_categories do

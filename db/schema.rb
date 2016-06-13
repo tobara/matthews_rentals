@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160603164837) do
+ActiveRecord::Schema.define(version: 20160613172642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,5 +47,9 @@ ActiveRecord::Schema.define(version: 20160603164837) do
   end
 
   add_index "equipment_rentals", ["equipment_name"], name: "index_equipment_rentals_on_equipment_name", using: :btree
+
+  create_table "subscribers", force: :cascade do |t|
+    t.text "email", null: false
+  end
 
 end
