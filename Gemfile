@@ -29,7 +29,7 @@ gem 'breadcrumbs_on_rails'
 gem 'rails_real_favicon'
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'rails_db'
+#gem 'rails_db'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

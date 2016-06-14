@@ -11,6 +11,7 @@ class EquipmentCategoriesController < ApplicationController
     @equipment_categories = EquipmentCategory.all
     @equipment_category = EquipmentCategory.find(params[:id])
     @category_rentals = EquipmentRental.where(equipment_category_id: params[:id])
+    @popular_rentals = EquipmentRental.all
     add_breadcrumb "#{@equipment_category.category}"
     @subscriber = Subscriber.new
     render :show
