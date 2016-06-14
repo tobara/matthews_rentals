@@ -125,49 +125,23 @@
 
 								<h4>Popular Items</h4>
 								<div id="post-list-footer">
-
-									<div class="spost clearfix">
-										<div class="entry-image">
-											<a href="#"><img src="<%= asset_path('preloader@2x.gif') %>" alt="Image"></a>
-										</div>
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Mini Track Loader</a></h4>
+								<% @random_rentals = @popular_rentals.limit(3).order("RANDOM()") %>
+								<% @random_rentals.each do |rental| %>
+										<div class="spost clearfix">
+											<div class="entry-image">
+												<a href="<%= equipment_category_path(rental.equipment_category_id) %>"><img src="<%= asset_path("#{rental.equipment_category_id}/#{rental.category_index_img}") %>" alt="Image"></a>
 											</div>
-											<ul class="entry-meta">
-												<li class="color">$150 / Daily</li>
+											<div class="entry-c">
+												<div class="entry-title">
+													<h4><a href="<%= equipment_category_path(rental.equipment_category_id) %>"><%= rental.equipment_name %></a></h4>
+												</div>
+												<ul class="entry-meta">
+													<li class="color"><%= rental.daily_rate %>/ Daily</li>
 
-											</ul>
-										</div>
-									</div>
-
-									<div class="spost clearfix">
-										<div class="entry-image">
-											<a href="#"><img src="<%= asset_path('preloader@2x.gif') %>" alt="Image"></a>
-										</div>
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Loader Backhoe</a></h4>
+												</ul>
 											</div>
-											<ul class="entry-meta">
-												<li class="color">$150 / Daily</li>
-											</ul>
 										</div>
-									</div>
-
-									<div class="spost clearfix">
-										<div class="entry-image">
-											<a href="#"><img src="<%= asset_path('preloader@2x.gif') %>" alt="Image"></a>
-										</div>
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Excavator</a></h4>
-											</div>
-											<ul class="entry-meta">
-												<li class="color">$275 / Daily</li>
-											</ul>
-										</div>
-									</div>
+									 <% end %>
 
 								</div>
 
