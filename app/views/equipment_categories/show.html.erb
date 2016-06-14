@@ -49,8 +49,12 @@
 
 											<ul class="iconlist">
 												<li><i class="icon-caret-right"></i> <%= rental.li_one %></li>
-												<li><i class="icon-caret-right"></i> <%= rental.li_two %></li>
-												<li><i class="icon-caret-right"></i> <%= rental.li_three %></li>
+												<% unless rental.li_two.nil? %>
+													<li><i class="icon-caret-right"></i> <%= rental.li_two %></li>
+												<% end %>
+												<% unless rental.li_three.nil? %>
+													<li><i class="icon-caret-right"></i> <%= rental.li_three %></li>
+												<% end %>
 											</ul>
 										</div>
 
