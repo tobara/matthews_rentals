@@ -9,6 +9,7 @@ class HomesController < ApplicationController
   def about
     add_breadcrumb "About", :about_path
     @equipment_categories = EquipmentCategory.all
+    @popular_rentals = EquipmentRental.all
     @subscriber = Subscriber.new
   end
 
