@@ -1,37 +1,37 @@
 require 'csv'
 
-EquipmentCategory.create([{ category: 'Air Tools & Compressors', cat_img:'compressor.jpg' }])
+EquipmentCategory.create([{ category: 'Air Tools & Compressors', cat_img:'compressor.jpg', descriptors: 'Compressors, Air Tools and Accessories' }])
 
-EquipmentCategory.create([{ category: 'Automotive', cat_img:'cat_charger.jpg' }])
+EquipmentCategory.create([{ category: 'Automotive', cat_img:'cat_charger.jpg', descriptors: 'Automotive Tools & Accessories' }])
 
-EquipmentCategory.create([{ category: 'Compaction', cat_img:'compactor.jpg' }])
+EquipmentCategory.create([{ category: 'Compaction', cat_img:'compactor.jpg', descriptors: 'Plate Compactors & Rammers' }])
 
-EquipmentCategory.create([{ category: 'Concrete ', cat_img:'concrete_saw.jpg' }])
+EquipmentCategory.create([{ category: 'Concrete ', cat_img:'concrete_saw.jpg', descriptors: 'Concrete Mixers and Saws' }])
 
-EquipmentCategory.create([{ category: 'Drills & Demolition', cat_img:'demo-drill.jpg' }])
-
-
-EquipmentCategory.create([{ category: 'Earth Moving', cat_img:'tractor-backhoe.jpg' }])
+EquipmentCategory.create([{ category: 'Drills & Demolition', cat_img:'demo-drill.jpg', descriptors: 'Jack Hammers, Drills & Hammer Drills' }])
 
 
-EquipmentCategory.create([{ category: 'Fastening Tools', cat_img:'nail-gun-2.jpg' }])
-
-EquipmentCategory.create([{ category: 'Flooring & Tile', cat_img:'tile-saw.jpg' }])
-
-EquipmentCategory.create([{ category: 'Generators & Fans', cat_img:'Honda-Generator.jpg' }])
-
-EquipmentCategory.create([{ category: 'Hoists & Jacks', cat_img:'engine-hoist.jpg' }])
-
-EquipmentCategory.create([{ category: 'Lawn & Landscape', cat_img:'tiller_husqvarna_2.jpg' }])
-
-EquipmentCategory.create([{ category: 'Material Handling & Moving', cat_img:'pallet-jack.jpg' }])
-
-EquipmentCategory.create([{ category: 'Pumps & Pressure Washers', cat_img:'generac-pressure-washer.png' }])
+EquipmentCategory.create([{ category: 'Earth Moving', cat_img:'tractor-backhoe.jpg', descriptors: 'Backhoes, Loaders & Excavators' }])
 
 
-EquipmentCategory.create([{ category: 'Saws & Woodworking', cat_img:'miter-saw.jpg' }])
+EquipmentCategory.create([{ category: 'Fastening Tools', cat_img:'nail-gun-2.jpg', descriptors: 'Air Nailers & Accessories' }])
 
-EquipmentCategory.create([{ category: 'Trailers', cat_img:'dump-trailer-2.jpeg' }])
+EquipmentCategory.create([{ category: 'Flooring & Tile', cat_img:'tile-saw.jpg', descriptors: 'Flooring Installation and Refinishing' }])
+
+EquipmentCategory.create([{ category: 'Generators & Fans', cat_img:'Honda-Generator.jpg', descriptors: 'Air Movers and Portable Generators' }])
+
+EquipmentCategory.create([{ category: 'Hoists & Jacks', cat_img:'engine-hoist.jpg', descriptors: 'Engine Lifts, Bottle Jacks and Stands' }])
+
+EquipmentCategory.create([{ category: 'Lawn & Landscape', cat_img:'tiller_husqvarna_2.jpg', descriptors: 'Chippers, Tillers, Mowers & More' }])
+
+EquipmentCategory.create([{ category: 'Material Handling & Moving', cat_img:'pallet-jack.jpg', descriptors: 'Dollies, Pallet Trucks and Forklifts' }])
+
+EquipmentCategory.create([{ category: 'Pumps & Pressure Washers', cat_img:'generac-pressure-washer.png', descriptors: 'Washers, Pumps & Accessories' }])
+
+
+EquipmentCategory.create([{ category: 'Saws & Woodworking', cat_img:'miter-saw.jpg', descriptors: 'Nailers & Portable Saws' }])
+
+EquipmentCategory.create([{ category: 'Trailers', cat_img:'dump-trailer-2.jpeg', descriptors: 'Truck Equipment & Material Transport' }])
 
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'concrete.csv'))
