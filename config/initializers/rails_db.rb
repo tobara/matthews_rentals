@@ -2,7 +2,7 @@ if Object.const_defined?('RailsDb')
   RailsDb.setup do |config|
     # # enabled or not
     # config.enabled = Rails.env.to_s == 'development'
-    config.verify_access_proc = proc { |controller| controller.current_user.admin? }
+    config.verify_access_proc = proc { |controller| controller.current_admin }
     # # automatic engine routes mounting
     # config.automatic_routes_mount = true
 
