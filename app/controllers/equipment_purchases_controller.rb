@@ -1,4 +1,4 @@
-class EquipmentPurchasingController < ApplicationController
+class EquipmentPurchasesController < ApplicationController
   add_breadcrumb "Home", :root_path
   add_breadcrumb "Equipment Purchasing", :equipment_purchasing_index_path
 

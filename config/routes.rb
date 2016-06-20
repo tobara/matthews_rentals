@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   end
   resources :subscribers, only: [:create]
   resources :equipment_sales, only: [:index]
-  resources :equipment_purchasing, only: [:index]
+  resources :equipment_purchases, only: [:index]
   resources :equipment_categories do
     resources :equipment_rentals do
     end
