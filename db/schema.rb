@@ -11,23 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621130862) do
+ActiveRecord::Schema.define(version: 20160622164035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "addresses", force: :cascade do |t|
-    t.string   "firstname",  null: false
-    t.string   "lastname",   null: false
-    t.string   "address1",   null: false
-    t.string   "address2"
-    t.string   "city",       null: false
-    t.string   "state_id",   null: false
-    t.integer  "country_id", null: false
-    t.string   "zip",        null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "adjustments", force: :cascade do |t|
     t.string   "source_type"
@@ -35,13 +22,6 @@ ActiveRecord::Schema.define(version: 20160621130862) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "note"
-  end
-
-  create_table "countries", force: :cascade do |t|
-    t.string  "name"
-    t.string  "abbr"
-    t.boolean "active_shipping", default: false
-    t.boolean "active_billing",  default: false
   end
 
   create_table "equipment_categories", force: :cascade do |t|
@@ -77,7 +57,27 @@ ActiveRecord::Schema.define(version: 20160621130862) do
 
   add_index "equipment_rentals", ["equipment_name"], name: "index_equipment_rentals_on_equipment_name", using: :btree
 
-  create_table "line_items", force: :cascade do |t|
+  create_table "piggybak_addresses", force: :cascade do |t|
+    t.string   "firstname",  null: false
+    t.string   "lastname",   null: false
+    t.string   "address1",   null: false
+    t.string   "address2"
+    t.string   "city",       null: false
+    t.string   "state_id",   null: false
+    t.integer  "country_id", null: false
+    t.string   "zip",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "piggybak_countries", force: :cascade do |t|
+    t.string  "name"
+    t.string  "abbr"
+    t.boolean "active_shipping", default: false
+    t.boolean "active_billing",  default: false
+  end
+
+  create_table "piggybak_line_items", force: :cascade do |t|
     t.integer  "order_id",                                                     null: false
     t.integer  "quantity",                                                     null: false
     t.integer  "sellable_id"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20160621130862) do
     t.string   "line_item_type",                          default: "sellable", null: false
   end
 
-  create_table "order_notes", force: :cascade do |t|
+  create_table "piggybak_order_notes", force: :cascade do |t|
     t.integer  "order_id",   null: false
     t.integer  "user_id",    null: false
     t.text     "note"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 20160621130862) do
     t.datetime "updated_at"
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "piggybak_orders", force: :cascade do |t|
     t.integer  "billing_address_id",                                           null: false
     t.integer  "shipping_address_id",                                          null: false
     t.integer  "user_id"
@@ -114,13 +114,13 @@ ActiveRecord::Schema.define(version: 20160621130862) do
     t.boolean  "confirmation_sent",                            default: false
   end
 
-  create_table "payment_method_values", force: :cascade do |t|
+  create_table "piggybak_payment_method_values", force: :cascade do |t|
     t.integer "payment_method_id"
     t.string  "key"
     t.string  "value"
   end
 
-  create_table "payment_methods", force: :cascade do |t|
+  create_table "piggybak_payment_methods", force: :cascade do |t|
     t.string   "description",                 null: false
     t.string   "klass",                       null: false
     t.boolean  "active",      default: false, null: false
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 20160621130862) do
     t.datetime "updated_at"
   end
 
-  create_table "payments", force: :cascade do |t|
+  create_table "piggybak_payments", force: :cascade do |t|
     t.integer  "payment_method_id"
     t.string   "status",            default: "paid", null: false
     t.integer  "month"
@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(version: 20160621130862) do
     t.integer  "line_item_id"
   end
 
-  create_table "sellables", force: :cascade do |t|
+  create_table "piggybak_sellables", force: :cascade do |t|
     t.string  "sku",                                                          null: false
     t.string  "description",                                                  null: false
     t.decimal "price",               precision: 10, scale: 2,                 null: false
@@ -151,7 +151,7 @@ ActiveRecord::Schema.define(version: 20160621130862) do
     t.boolean "unlimited_inventory",                          default: false, null: false
   end
 
-  create_table "shipments", force: :cascade do |t|
+  create_table "piggybak_shipments", force: :cascade do |t|
     t.integer  "shipping_method_id",                 null: false
     t.string   "status",             default: "new", null: false
     t.datetime "created_at"
@@ -159,38 +159,56 @@ ActiveRecord::Schema.define(version: 20160621130862) do
     t.integer  "line_item_id"
   end
 
-  create_table "shipping_method_values", force: :cascade do |t|
+  create_table "piggybak_shipping_method_values", force: :cascade do |t|
     t.integer "shipping_method_id"
     t.string  "key"
     t.string  "value"
   end
 
-  create_table "shipping_methods", force: :cascade do |t|
+  create_table "piggybak_shipping_methods", force: :cascade do |t|
     t.string  "description",                 null: false
     t.string  "klass",                       null: false
     t.boolean "active",      default: false, null: false
   end
 
-  create_table "states", force: :cascade do |t|
+  create_table "piggybak_states", force: :cascade do |t|
     t.string  "name"
     t.string  "abbr"
     t.integer "country_id"
+  end
+
+  create_table "piggybak_tax_method_values", force: :cascade do |t|
+    t.integer "tax_method_id"
+    t.string  "key"
+    t.string  "value"
+  end
+
+  create_table "piggybak_tax_methods", force: :cascade do |t|
+    t.string  "description",                 null: false
+    t.string  "klass",                       null: false
+    t.boolean "active",      default: false, null: false
   end
 
   create_table "subscribers", force: :cascade do |t|
     t.text "email", null: false
   end
 
-  create_table "tax_method_values", force: :cascade do |t|
-    t.integer "tax_method_id"
-    t.string  "key"
-    t.string  "value"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
-  create_table "tax_methods", force: :cascade do |t|
-    t.string  "description",                 null: false
-    t.string  "klass",                       null: false
-    t.boolean "active",      default: false, null: false
-  end
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

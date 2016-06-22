@@ -29,11 +29,12 @@ gem 'breadcrumbs_on_rails'
 gem 'rails_real_favicon'
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'rails_db'
+# gem 'rails_db'
 # gem 'axlsx_rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # gem 'devise'
+gem 'piggybak'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

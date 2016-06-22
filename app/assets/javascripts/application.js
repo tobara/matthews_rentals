@@ -21,4 +21,5 @@
 //= require jquery.mousewheel.min
 //= require plugins
 //= require_tree .
+//= require piggybak/piggybak-application
 
