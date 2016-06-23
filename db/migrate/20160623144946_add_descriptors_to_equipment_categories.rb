@@ -8,3 +8,4 @@ class AddDescriptorsToEquipmentCategories < ActiveRecord::Migration
     remove_column :equipment_categories, :descriptors, :string
   end
 end
+
