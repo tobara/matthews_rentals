@@ -34,11 +34,13 @@
 						<% @category_rentals.each do |rental|%>
 							<div class="product clearfix">
 								<div class="product-image">
-									<a href="#"><%= image_tag ("#{rental.equipment_category_id}/#{rental.category_index_img}") %></a>
-									<div class="product-overlay">
+							<!-- 		<a href="#"> -->
+									<%= image_tag ("#{rental.equipment_category_id}/#{rental.category_index_img}") %>
+								<!-- 	</a> -->
+									<!-- <div class="product-overlay">
 										<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
 										<a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
-									</div>
+									</div> -->
 								</div>
 								<div class="product-desc">
 									<div class="product-title"><h3><a href="#"><%= rental.equipment_name %></a></h3></div>
@@ -87,7 +89,7 @@
 												</table>
 											  </div>
 
-											<a class="button button-small" href="#"><i class="icon-circle-arrow-right"></i>More Details</a>
+<!-- 											<a class="button button-small" href="#"><i class="icon-circle-arrow-right"></i>More Details</a> -->
 										</div>
 									</div>
 								</div>
