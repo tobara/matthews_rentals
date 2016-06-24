@@ -46,6 +46,9 @@
 <body>
 
 <%= render 'layouts/header' %>
+  <div class="container">
+    <%= render 'layouts/messages' %>
+    </div>
 
 <%= javascript_include_tag 'functions.js', "data-turbolinks-track" => true %>
 <div data-animate="loaderStyleHtml" data-loader-timeout="10"></div>

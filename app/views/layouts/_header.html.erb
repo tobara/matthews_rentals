@@ -33,12 +33,22 @@
           ============================================= -->
           <div class="top-links">
             <ul>
-              <li><a>Location</a>
+<!--               <li><a>About</a>
                 <ul>
-                  <li><a href="<%= about_path %>">Boscawen, NH</a></li>
-                </ul>
-              <li><a href="<%= login_path %>">Login</a></li>
-            </ul>
+                  <li><a href="">Boscawen, NH</a></li>
+                </ul> -->
+              <% if current_user %>
+                <li class="has-dropdown">
+                <%= link_to current_user.username, '#', style: 'color:#E74C3C;' %>
+                <ul class="dropdown">
+                  <li><%= link_to 'Settings', edit_user_registration_path %></li>
+                    <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+                  </ul>
+                </li>
+                <% else %>
+                  <li><%= link_to "Sign In", new_user_session_path %></li>
+                <% end %>
+              </ul>
           </div><!-- .top-links end -->
 
         </div>

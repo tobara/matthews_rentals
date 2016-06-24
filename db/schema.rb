@@ -11,23 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623144946) do
+ActiveRecord::Schema.define(version: 20160623153109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "addresses", force: :cascade do |t|
-    t.string   "firstname",  null: false
-    t.string   "lastname",   null: false
-    t.string   "address1",   null: false
-    t.string   "address2"
-    t.string   "city",       null: false
-    t.string   "state_id",   null: false
-    t.integer  "country_id", null: false
-    t.string   "zip",        null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "equipment_categories", force: :cascade do |t|
     t.string   "category",    null: false
@@ -58,31 +45,9 @@ ActiveRecord::Schema.define(version: 20160623144946) do
     t.string   "equipment_img_four"
     t.string   "equipment_img_five"
     t.string   "equipment_img_six"
-    t.integer  "inventory_cnt",         default: 0,                                null: false
   end
 
   add_index "equipment_rentals", ["equipment_name"], name: "index_equipment_rentals_on_equipment_name", using: :btree
-
-  create_table "line_items", force: :cascade do |t|
-    t.integer "order_id",   null: false
-    t.integer "quantity",   null: false
-    t.integer "variant_id"
-    t.decimal "total"
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer  "billing_address_id",                null: false
-    t.integer  "shipping_address_id",               null: false
-    t.integer  "user_id"
-    t.string   "email",                             null: false
-    t.string   "phone",                             null: false
-    t.decimal  "total",                             null: false
-    t.decimal  "total_due",                         null: false
-    t.string   "status",                            null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.decimal  "tax_charge",          default: 0.0, null: false
-  end
 
   create_table "rentals", force: :cascade do |t|
     t.date     "date"
@@ -96,15 +61,24 @@ ActiveRecord::Schema.define(version: 20160623144946) do
     t.text "email", null: false
   end
 
-  create_table "variants", force: :cascade do |t|
-    t.string  "sku",                                 null: false
-    t.string  "description",                         null: false
-    t.decimal "price",                               null: false
-    t.integer "quantity",            default: 0,     null: false
-    t.integer "item_id",                             null: false
-    t.string  "item_type",                           null: false
-    t.boolean "active",              default: false, null: false
-    t.boolean "unlimited_inventory", default: false, null: false
+  create_table "users", force: :cascade do |t|
+    t.string   "username",               default: "", null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

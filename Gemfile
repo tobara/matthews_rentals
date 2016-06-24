@@ -33,7 +33,7 @@ gem 'rails_real_favicon'
 # gem 'axlsx_rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# gem 'devise'
+gem 'devise'
 # gem 'piggybak'
 
 group :development, :test do
