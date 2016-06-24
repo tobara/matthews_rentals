@@ -22,7 +22,7 @@ Rails.application.config.assets.precompile += %w( font-icons.css )
 Rails.application.config.assets.precompile += %w( font.css )
 Rails.application.config.assets.precompile += %w( animate.css )
 Rails.application.config.assets.precompile += %w( responsive.css )
-
+Rails.application.config.assets.precompile += %w( google.js )
 Rails.application.config.assets.precompile += %w( application.js )
 Rails.application.config.assets.precompile += %w( jquery.js )
 
