@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'homes#index'
   scope :homes, :controller => 'homes', :path => 'home' do
     get 'about', :path => '/About-Us'
