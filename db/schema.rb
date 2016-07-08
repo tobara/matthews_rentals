@@ -49,14 +49,6 @@ ActiveRecord::Schema.define(version: 20160623153109) do
 
   add_index "equipment_rentals", ["equipment_name"], name: "index_equipment_rentals_on_equipment_name", using: :btree
 
-  create_table "rentals", force: :cascade do |t|
-    t.date     "date"
-    t.integer  "user_id"
-    t.integer  "equipment_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "subscribers", force: :cascade do |t|
     t.text "email", null: false
   end
