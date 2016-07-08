@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+
 //= require turbolinks
 
 //= require events-data
@@ -21,4 +21,4 @@
 //= require jquery.mousewheel.min
 //= require plugins
 //= require_tree .
-
+//= require jquery_ujs
