@@ -1,6 +1,6 @@
 class EquipmentPurchasesController < ApplicationController
   add_breadcrumb "Home", :root_path
-  add_breadcrumb "Equipment Purchasing", :equipment_purchasing_index_path
+  add_breadcrumb "Equipment Purchasing", :equipment_purchases_path
 
   def index
     @equipment_categories = EquipmentCategory.all
